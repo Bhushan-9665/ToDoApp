@@ -1,0 +1,169 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: aliceblue;
+    width: 100%;
+    
+    
+}
+/* -----------------------------------------title Bar-------------------------------------------------- */
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 80vh;
+    background-color: black;
+    margin-top: 5%;
+    position: relative;
+    left: 5%;
+
+    
+}
+
+.nav{
+    display: inline-block;
+    width: 100%;
+    height:auto;
+    padding: 20px;
+    color: aliceblue;
+    position: absolute;
+    top: 0%;
+    
+}
+
+.Tasks{
+    position: absolute;
+    font-size: 70px;
+    left: 7%;
+    top: 3rem;
+}
+
+.List{
+    position: absolute;
+    font-size: 70px;
+    top: 3rem;
+    left: 17%;
+}
+
+.addItem{
+    position: absolute;
+    font-size: 70px;
+    right: 22%;
+    top: 3rem;
+}
+
+.masterButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00A5EC;
+    border-radius: 50%;
+    position: absolute;
+    right: 38%;
+    top: 3rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 5rem;
+    
+}
+
+
+.msg h1{
+    position: absolute;
+    top: 10rem;
+    left: 9rem;
+    font-size: 2rem;
+    color: aliceblue;
+}
+
+/* -----------------------------------------title Bar-------------------------------------------------- */
+
+
+
+
+/* -----------------------------------------Popup Window-------------------------------------------------- */
+
+.popupWindow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35rem;
+    height: 20rem;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: 3px solid black;
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    display: none;
+}
+
+.popupWindow h1{
+    position: absolute;
+    top: 50px;
+    font-size: 38px;
+    color: tomato;
+}
+
+.popupWindow input {
+    position: absolute;
+    top: 40%;
+    bottom: 0%;
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid tomato;
+    text-align: center;
+    font-size: 24px;
+}
+
+.popupWindow #addPopup{
+    position: relative;
+    top: 80px;
+    right: 100px;
+    width: 100px;
+    height: 50px;
+    background-color: lightgreen;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.popupWindow #closePopup{
+    position: relative;
+    top: 30px;
+    left: 100px;
+    width: 100px;
+    height: 50px;
+    background-color: tomato;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+
+/* button created from google */
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card1{
+    width: 200px;
+    height: 350px;
+    background-color: aliceblue;
+}
+
+
+
+
+
+
+
