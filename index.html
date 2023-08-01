@@ -11,27 +11,52 @@
 <!-- step-1------------------------------------------------------------------>
     <div class="main">
         <div class="nav">
+            
+        </div>
             <div class="Tasks">Tasks</div> 
             <div class="List">List</div> 
             <div class="masterButton" onclick="masterButton()">+</div> 
             <div class="addItem "onclick="masterButton()">Add Item</div>
-        </div>
+
+
+
             <div class="msg">
                 <h1> No Item In The Toda List</h1>
             </div>
 
-            <div class="popupWindow">
-                <h1>Add New List</h1>
-                <input type="text" placeholder="Add New List" id="inputTask">
-                <button id="addPopup" onclick="">Add</button> <button id="closePopup" onclick="closePopup()">Close</button>
-            </div>
+            
 
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card1">
-                    <h1>trip to button</h1>
+                    <br>
+                    <h1>trip to button</h1><br>
+                    <hr>
+                    <div>
+                        <button class="innerButton1 innerButton" onclick="addtask()"><img src="./round-add-button_61183.png" alt="add" width="49px;"height = 50px;></button>
+                        <button class="innerButton2 innerButton" onclick="removeTask()"><img src="./round-remove-button_61182.png" alt="remove"width="49px;"height = 50px;></button>
+                    </div>
                 </div>
+            </div> -->
+
+
+            <div id="cardContainer" class="cardContainer">
+
             </div>
 
+    </div>
+
+    <div class="popupWindow" id="popUp"> 
+        <h1>Add New List</h1>
+        <input type="text" placeholder="Add New List" id="inputTask">
+        <button id="addPopup" onclick="addcard()">Add</button> 
+        <button id="closePopup" onclick="closePopup()">Close</button>
+    </div>
+    
+    <div class="popupWindow-task" id="popupWindow-task">
+        <h1>Add New Item</h1>
+        <input type="text" placeholder="Add New Item" value="" id="InputTODO">
+        <button id="addPopup1" >Add</button> <!-- onclick="addtask()" -->
+        <button id="closePopup1">Close</button>
     </div>
 
     

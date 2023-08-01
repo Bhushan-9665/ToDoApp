@@ -26,22 +26,14 @@ body{
     
 }
 
-.nav{
-    display: inline-block;
-    width: 100%;
-    height:auto;
-    padding: 20px;
-    color: aliceblue;
-    position: absolute;
-    top: 0%;
-    
-}
+
 
 .Tasks{
     position: absolute;
     font-size: 70px;
     left: 7%;
     top: 3rem;
+    color: aliceblue;
 }
 
 .List{
@@ -49,6 +41,7 @@ body{
     font-size: 70px;
     top: 3rem;
     left: 17%;
+    color: aliceblue;
 }
 
 .addItem{
@@ -56,6 +49,8 @@ body{
     font-size: 70px;
     right: 22%;
     top: 3rem;
+    color: aliceblue;
+    cursor: pointer;
 }
 
 .masterButton{
@@ -70,6 +65,8 @@ body{
     width: 5rem;
     height: 5rem;
     font-size: 5rem;
+    color: aliceblue;
+    cursor: pointer;
     
 }
 
@@ -99,11 +96,14 @@ body{
     background-color: aliceblue;
     border-radius: 10px;
     border: 3px solid black;
-    position: relative;
-    top: 0px;
-    bottom: 0px;
+    position: absolute;
+    top: 15%; 
+    left: 50%;
     display: none;
+    transform: translate(-50%,50%)
 }
+
+
 
 .popupWindow h1{
     position: absolute;
@@ -135,6 +135,8 @@ body{
     font-size: 18px;
 }
 
+
+
 .popupWindow #closePopup{
     position: relative;
     top: 30px;
@@ -147,19 +149,111 @@ body{
 }
 
 
-/* button created from google */
+/* card container */
 
-.card{
+.cardContainer{
     display: flex;
     flex-wrap: wrap;
-
+    border: 3px solid black;
+    background-color: #00A5EC;
 }
 
-.card1{
-    width: 200px;
-    height: 350px;
+.card{
+    width: 242px;
+    height: 380px;
+    border-radius: 10px;
+    border: 3px solid black;
     background-color: aliceblue;
+    text-align: center;
 }
+
+.card h2{
+    padding: 20px;
+    border-bottom: 2px solid black;
+    background-color: rgb(90, 90, 199);
+}
+
+.card button{
+    position: relative;
+    top: 275px;
+    left: 70px;
+}
+
+
+/* Creating a popup for add task Event */
+
+.popupWindow-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35rem;
+    height: 20rem;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: 3px solid black;
+    position: absolute;
+    top: 15%; 
+    left: 50%;
+    display: none;
+    transform: translate(-50%,50%)
+}
+
+/* 
+div
+h1
+input
+id addpopup 
+id clockpopup
+*/
+
+.popupWindow-task h1{
+    position: absolute;
+    top: 50px;
+    font-size: 38px;
+    color: tomato;
+}
+
+.popupWindow-task input {
+    position: absolute;
+    top: 40%;
+    bottom: 0%;
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid tomato;
+    text-align: center;
+    font-size: 24px;
+}
+
+.popupWindow-task #addPopup1{
+    position: relative;
+    top: 80px;
+    right: 100px;
+    width: 100px;
+    height: 50px;
+    background-color: lightgreen;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+
+
+.popupWindow-task #closePopup1{
+    position: relative;
+    top: 30px;
+    left: 100px;
+    width: 100px;
+    height: 50px;
+    background-color: tomato;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+
+
+
+
 
 
 
