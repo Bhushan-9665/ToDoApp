@@ -153,31 +153,69 @@ body{
 
 .cardContainer{
     display: flex;
+    width: 85%;
+    justify-content: space-between;
     flex-wrap: wrap;
     border: 3px solid black;
-    background-color: #00A5EC;
+    background-color: #343337;
 }
 
 .card{
+    display: flex;
+    flex-direction: column;
     width: 242px;
+    gap: 5px;
     height: 380px;
     border-radius: 10px;
     border: 3px solid black;
     background-color: aliceblue;
     text-align: center;
+    background-color: #5d70bd;
+    position: relative;
+    top: 0%;
 }
 
 .card h2{
     padding: 20px;
     border-bottom: 2px solid black;
-    background-color: rgb(90, 90, 199);
+    /* background-color: rgb(90, 90, 199); */
+    color: #feffff;
 }
 
-.card button{
-    position: relative;
-    top: 275px;
-    left: 70px;
+.card .deleteName{
+    position: absolute;
+    width: 97%;
+    margin-left: 4px;
+    background-color: #800020;
+    height: 30px;
+    top: 21rem;
+    left: 0rem;
 }
+
+.card .addTaskName{
+    position: absolute;
+    width: 97%;
+    margin-left: 4px;
+    background-color: #0D362B;
+    height: 30px;
+    top: 19rem;
+    left: 0rem;
+}
+
+/* Inner div On popup button */
+
+.childCard{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    color: #111111;
+    border-radius: 5px;
+    width: 97%;
+    height: 35px;
+    margin-left: 3px;
+}
+
 
 
 /* Creating a popup for add task Event */
