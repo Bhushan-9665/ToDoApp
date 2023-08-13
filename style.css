@@ -16,13 +16,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
-    height: 80vh;
+    width: 100%;
+    height: 100vh;  
     background-color: black;
-    margin-top: 5%;
+    margin-top: 0%;
     position: relative;
-    left: 5%;
-
+    left: 0%;
     
 }
 
@@ -100,7 +99,9 @@ body{
     top: 15%; 
     left: 50%;
     display: none;
-    transform: translate(-50%,50%)
+    transform: translate(-50%,50%);
+    z-index : 5;
+
 }
 
 
@@ -158,6 +159,10 @@ body{
     flex-wrap: wrap;
     border: 3px solid black;
     background-color: #343337;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    right: 10%;
 }
 
 .card{
@@ -212,8 +217,15 @@ body{
     color: #111111;
     border-radius: 5px;
     width: 97%;
-    height: 35px;
+    /* height: 35px; */
     margin-left: 3px;
+
+    overflow: auto;
+}
+
+.childCard h3{
+   overflow: auto;
+    
 }
 
 
@@ -234,7 +246,8 @@ body{
     top: 15%; 
     left: 50%;
     display: none;
-    transform: translate(-50%,50%)
+    transform: translate(-50%,50%);
+    z-index: 4;
 }
 
 /* 

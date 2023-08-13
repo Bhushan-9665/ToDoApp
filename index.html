@@ -8,11 +8,8 @@
 </head>
 <body>
 
-<!-- step-1------------------------------------------------------------------>
-    <div class="main">
-        <div class="nav">
-            
-        </div>
+    <div class="main" id="blur">
+
             <div class="Tasks">Tasks</div> 
             <div class="List">List</div> 
             <div class="masterButton" onclick="masterButton()">+</div> 
@@ -24,25 +21,30 @@
                 <h1> No Item In The Toda List</h1>
             </div>
 
-            <div id="cardContainer" class="cardContainer">
-
-            </div>
+            <button  id="back_button" class="backbutton" onclick="reverse()"> Back</button>
 
     </div>
 
-    <div class="popupWindow" id="popUp"> 
-        <h1>Add New List</h1>
-        <input type="text" placeholder="Add New List" id="inputTask">
-        <button id="addPopup" onclick="addcard()">Add</button> 
-        <button id="closePopup" onclick="closePopup()">Close</button>
+    <div id="cardContainer" class="cardContainer ">
+        <div class="popupWindow" id="popUp"> 
+            <h1>Add New List</h1>
+            <input type="text" placeholder="Add New List" id="inputTask" value="" name="">
+            <button id="addPopup" onclick="addcard()">Add</button> 
+            <button id="closePopup" onclick="closePopup()">Close</button>
+        </div>
+        
+            <div class="popupWindow-task" id="popupWindow-task">
+                <h1>Add New Item</h1>
+            <input type="text" placeholder="Add New Item" value="" id="InputTODO">
+            <button id="addPopup1" onclick="addtask()">Add</button> <!-- onclick="addtask()" -->
+            <button id="closePopup1">Close</button>
+        </div>
+
     </div>
-    
-    <div class="popupWindow-task" id="popupWindow-task">
-        <h1>Add New Item</h1>
-        <input type="text" placeholder="Add New Item" value="" id="InputTODO">
-        <button id="addPopup1" >Add</button> <!-- onclick="addtask()" -->
-        <button id="closePopup1">Close</button>
-    </div>
+
+
+
+    <div id="hide_container"  class="hide_container hide"></div>
 
     
 
