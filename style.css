@@ -19,7 +19,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: black;
+    /* background-color: black; */
     margin-top: 0%;
     position: relative;
     left: 0%;
@@ -159,7 +159,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     border: 3px solid black;
-    background-color: black;
+    /* background-color: black; */
     gap: 2rem;
     position: absolute;
     top: 25%;
@@ -228,10 +228,7 @@ body {
     overflow: auto;
 }
 
-/* .childCard h3 {
-    /* overflow: auto; */
 
-/* } */ 
 
 .hide_container {
     display: flex;
@@ -246,8 +243,57 @@ body {
 
 
 /* Creating a popup for add task Event */
+.hide{
+    display: none;
+}
 
-.popupWindow-task {
+.task-popup-parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+    height: 270px;
+    background-color: wheat;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    border-radius: 15px;
+    border: black 2px solid;
+}
+
+.task-popup-parent h1 {
+    position: absolute;
+    top: 20px;
+}
+
+.task-popup-parent input {
+    width: 80%;
+    height: 35px;
+}
+
+.Add-button{
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    color: white;
+    background: green;
+}
+
+.close-button{
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    right: 10%;
+    top: 70%;
+    color: white;
+    background: tomato;
+}
+
+
+/* .popupWindow-task {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -263,24 +309,18 @@ body {
     display: none;
     transform: translate(-50%, 50%);
     z-index: 4;
-}
+} */
 
-/* 
-div
-h1
-input
-id addpopup 
-id clockpopup
-*/
 
-.popupWindow-task h1 {
+
+/* .popupWindow-task h1 {
     position: absolute;
     top: 50px;
     font-size: 38px;
     color: tomato;
-}
+} */
 
-.popupWindow-task input {
+/* .popupWindow-task input {
     position: absolute;
     top: 40%;
     bottom: 0%;
@@ -290,9 +330,9 @@ id clockpopup
     border: 2px solid tomato;
     text-align: center;
     font-size: 24px;
-}
+} */
 
-.popupWindow-task #addPopup1 {
+/* .popupWindow-task .addPopup1 {
     position: relative;
     top: 80px;
     right: 100px;
@@ -302,11 +342,11 @@ id clockpopup
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-}
+} */
 
 
 
-.popupWindow-task #closePopup1 {
+/* .popupWindow-task .closePopup1 {
     position: relative;
     top: 30px;
     left: 100px;
@@ -316,7 +356,7 @@ id clockpopup
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-}
+} */
 
 
 /* -----------------------------------------Back button css */
@@ -614,7 +654,7 @@ id clockpopup
         font-size: 24px;
     }
 
-    .popupWindow-task #addPopup1 {
+    .popupWindow-task .addPopup1 {
         position: relative;
         top: 80px;
         right: 100px;
@@ -627,7 +667,7 @@ id clockpopup
 
 
 
-    .popupWindow-task #closePopup1 {
+    .popupWindow-task .closePopup1 {
         position: relative;
         top: 30px;
         left: 100px;
@@ -935,7 +975,7 @@ id clockpopup
         font-size: 24px;
     }
 
-    .popupWindow-task #addPopup1 {
+    .popupWindow-task .addPopup1 {
         position: relative;
         top: 80px;
         right: 100px;
@@ -948,7 +988,7 @@ id clockpopup
 
 
 
-    .popupWindow-task #closePopup1 {
+    .popupWindow-task .closePopup1 {
         position: relative;
         top: 30px;
         left: 100px;
