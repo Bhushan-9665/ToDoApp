@@ -1,6 +1,6 @@
 var popup = document.getElementById("popUp");
 const cardContainer = document.getElementById("cardContainer");
-var blurpage = document.getElementById("blur");
+var main = document.getElementById("main");
 const ClosePopupTask = document.getElementById("closePopup1");
 // var addTaskFormPopupButton = document.getElementById("addPopup1");
 var taskList = document.getElementById("InputTODO");
@@ -10,7 +10,7 @@ const hide_container = document.getElementById("hide_container");
 var appendTasklistdiv = document.getElementById("select-div");
 taskPopupJS =document.querySelector('body')
 
-var runningCard = 0;
+// var runningCard = 0;
 //----------------
 
 let visible = false;
@@ -18,18 +18,18 @@ function masterButton() {
   if (!visible) {
     const popupWindow = document.querySelector(".popupWindow");
     popupWindow.style.display = "flex";
-    blurpage.style.filter = "blur(4px)";
+    main.classList.add('blur')
   } else {
     const closePopup = document.querySelector(".popupWindow");
     closePopup.style.display = "none";
-    blurpage.style.filter = "blur(0px)";
+    main.classList.remove('blur')
   }
 }
 
 function closePopup() {
   const closePopup = document.querySelector(".popupWindow");
   closePopup.style.display = "none";
-  blurpage.style.filter = "blur(0px)";
+  main.classList.remove('blur')
 }
 
 function addcard() {
@@ -66,20 +66,15 @@ function addcard() {
   hideMsg.style.display = "none"; // hide msg after clinking Add button
   closePopup(); // Affer the add card, card will hidden
 
-  cardTitle.addEventListener("click", function () {
-    hide_container.appendChild(newcard);
-    cardContainer.style.display = "none";
-    backbutton.style.display = "block";
 
-    backbutton.addEventListener("click", function () {
-      cardContainer.appendChild(newcard);
-      cardContainer.style.display = "flex";
-      backbutton.style.display = "none";
-    });
-  });
+  deletButton.addEventListener('click', function (){
+    cardContainer.removeChild(newcard)
+  })
+
 
   // Add Task  POPUP visible
   addButton.addEventListener("click", function () {
+    main.classList.add('blur')
     let popupWindowTask = document.createElement("div");
     let HedingTask = document.createElement("h1");
     let InputTask = document.createElement("input");
@@ -102,19 +97,28 @@ function addcard() {
 
     taskPopupJS.appendChild(popupWindowTask);
 
+    
+    
     AddButton.addEventListener("click", function () {
-      Task = document.createElement("div");
-      TaskName = document.createElement("span");
-      TaskDelete = document.createElement("button");
+      popupWindowTask.classList.add('hide')
+      main.classList.remove('blur')
+      let Task = document.createElement("div");
+      let TaskName = document.createElement("span");
+      let TaskDelete = document.createElement("button");
 
       Task.appendChild(TaskName);
       Task.appendChild(TaskDelete);
 
-      TaskName.innerHTML = InputTask.value;
+      TaskName.innerText = InputTask.value;
       TaskDelete.innerText = "Mark Done";
 
       innerDiv.appendChild(Task);
-      
+
+
+      popupWindowTask.style.display = 'none'
+      popupWindowTask.innerText = ""; 
+
+
       TaskDelete.addEventListener('click', function(){
         TaskName.style.textDecoration = 'line-through'
         TaskDelete.style.display = 'none'
@@ -123,8 +127,7 @@ function addcard() {
       })
       
       
-      popupWindowTask.innerText = "";
-      popupWindowTask.style.display = 'none'
+      
       
     });
     closeButton.addEventListener("click", function () {
@@ -133,7 +136,28 @@ function addcard() {
     });
     
   });
+
+  cardTitle.addEventListener("click", function () {
+    backbutton.style.display = 'flex'
+    cardContainer.classList.add('hide')
+    hide_container.classList.remove('hide')
+
+    let copycard = newcard.cloneNode(true)
+    hide_container.appendChild(copycard); 
+    
+    // back_button.firstElementChild.classList.remove('hide')
+    // backbutton.style.display = "block";
+
+    
+  });
   
 }
 
 
+function back () {
+  backbutton.style.display = 'none'
+  cardContainer.classList.remove('hide')
+  hide_container.classList.add('hide')
+  hide_container.innerText = ''
+  
+};

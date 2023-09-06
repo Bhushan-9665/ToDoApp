@@ -243,11 +243,11 @@ body {
 
 
 /* Creating a popup for add task Event */
-.hide{
+.hide {
     display: none;
 }
 
-.task-popup-parent{
+.task-popup-parent {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,9 +255,9 @@ body {
     width: 390px;
     height: 270px;
     background-color: wheat;
-    position: fixed;
+    position: absolute;
     top: 30%;
-    left: 40%;
+    left: 25%;
     border-radius: 15px;
     border: black 2px solid;
 }
@@ -272,7 +272,7 @@ body {
     height: 35px;
 }
 
-.Add-button{
+.Add-button {
     width: 80px;
     height: 40px;
     position: absolute;
@@ -282,7 +282,7 @@ body {
     background: green;
 }
 
-.close-button{
+.close-button {
     width: 80px;
     height: 40px;
     position: absolute;
@@ -363,9 +363,9 @@ body {
 
 
 .backbutton {
-    position: absolute;
-    left: 10%;
-    top: 20%;
+    position: fixed;
+    left: 9%;
+    top: 14%;
     width: 100px;
     height: 50px;
     border: #000105;
@@ -376,6 +376,11 @@ body {
     font-size: 28px;
     display: none;
     cursor: pointer;
+    z-index: 8;
+}
+
+.blur{
+    filter: blur(4px);
 }
 
 
@@ -679,6 +684,25 @@ body {
     }
 
 
+
+    /* --------------------task popup----------- */
+    
+    
+    .task-popup-parent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 365px;
+        height: 243px;
+        background-color: wheat;
+        position: absolute;
+        top: 30%;
+        left: 1%;
+        border-radius: 15px;
+        border: black 2px solid;
+    }
+
     /* -----------------------------------------Back button css */
 
 
@@ -783,8 +807,8 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 97%;
-        height: 15rem;
+        width: 35rem;
+        height: 20rem;
         background-color: aliceblue;
         border-radius: 10px;
         border: 3px solid black;
@@ -820,44 +844,44 @@ body {
 
     .popupWindow #addPopup {
         position: relative;
-        top: 64px;
-        right: 72px;
-        width: 70px;
-        height: 36px;
+        top: 80px;
+        right: 100px;
+        width: 100px;
+        height: 50px;
         background-color: lightgreen;
         border-radius: 5px;
-        font-size: 15px;
+        font-size: 18px;
     }
-
-
-
+    
+    
+    
     .popupWindow #closePopup {
-        position: absolute;
-        top: 162px;
-        left: 190px;
-        width: 70px;
-        height: 36px;
+        position: relative;
+        top: 30px;
+        left: 100px;
+        width: 100px;
+        height: 50px;
         background-color: tomato;
         border-radius: 5px;
-        font-size: 15px;
+        font-size: 18px;
     }
 
 
 
     .cardContainer {
         display: flex;
-    width: fit-content;
-    height: 100vh;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: 3px solid black;
-    background-color: black;
-    position: absolute;
-    gap: 2rem;
-    top: 25%;
-    /* left: 10%; */
-    /* right: 10%; */
-    overflow: scroll;
+        width: fit-content;
+        height: 100vh;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border: 3px solid black;
+        background-color: black;
+        position: absolute;
+        gap: 2rem;
+        top: 25%;
+        /* left: 10%; */
+        /* right: 10%; */
+        overflow: scroll;
     }
 
     .card {
