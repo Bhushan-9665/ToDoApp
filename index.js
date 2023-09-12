@@ -10,6 +10,8 @@ const hide_container = document.getElementById("hide_container");
 var appendTasklistdiv = document.getElementById("select-div");
 taskPopupJS =document.querySelector('body')
 
+// const cardArr = [];
+
 // var runningCard = 0;
 //----------------
 
@@ -100,6 +102,7 @@ function addcard() {
     
     
     AddButton.addEventListener("click", function () {
+      console.log('work3')
       popupWindowTask.classList.add('hide')
       main.classList.remove('blur')
       let Task = document.createElement("div");
@@ -128,7 +131,6 @@ function addcard() {
       
       
       
-      
     });
     closeButton.addEventListener("click", function () {
       popupWindowTask.innerText = "";
@@ -137,6 +139,7 @@ function addcard() {
     
   });
 
+
   cardTitle.addEventListener("click", function () {
     backbutton.style.display = 'flex'
     cardContainer.classList.add('hide')
@@ -144,10 +147,78 @@ function addcard() {
 
     let copycard = newcard.cloneNode(true)
     hide_container.appendChild(copycard); 
-    
-    // back_button.firstElementChild.classList.remove('hide')
-    // backbutton.style.display = "block";
 
+    // console.log([hide_container])
+
+    copycard.lastElementChild.addEventListener('click',function(){
+      console.log([copycard]) 
+      // addButton.addEventListener("click", function () {
+        main.classList.add('blur')
+        let popupWindowTask = document.createElement("div");
+        let HedingTask = document.createElement("h1");
+        let InputTask = document.createElement("input");
+        let AddButton = document.createElement("button");
+        let closeButton = document.createElement("button");
+    
+        HedingTask.innerText = "Add Task";
+        AddButton.innerHTML = "Add";
+        closeButton.innerText = "Close";
+    
+        popupWindowTask.appendChild(HedingTask);
+        popupWindowTask.appendChild(InputTask);
+        popupWindowTask.appendChild(AddButton);
+        popupWindowTask.appendChild(closeButton);
+    
+        popupWindowTask.classList.add('task-popup-parent')
+        AddButton.classList.add('Add-button')
+        closeButton.classList.add('close-button')
+    
+    
+        taskPopupJS.appendChild(popupWindowTask); 
+    
+        
+        
+        AddButton.addEventListener("click", function () {
+          console.log('work-2')
+          
+          console.log(AddButton)
+          popupWindowTask.classList.add('hide')
+          main.classList.remove('blur')
+          let Task = document.createElement("div");
+          let TaskName = document.createElement("span");
+          let TaskDelete = document.createElement("button");
+    
+          Task.appendChild(TaskName);
+          Task.appendChild(TaskDelete);
+    
+          TaskName.innerText = InputTask.value;
+          TaskDelete.innerText = "Mark Done";
+          
+          let copycard1 = copycard.children[1]
+          // copycard.nextChildElement.nextChildElement.appendChild(Task);
+          copycard1.appendChild(Task)
+    
+    
+          popupWindowTask.style.display = 'none'
+          popupWindowTask.innerText = ""; 
+    
+          TaskDelete.addEventListener('click', function(){
+            TaskName.style.textDecoration = 'line-through'
+            TaskDelete.style.display = 'none'
+        
+        });
+        closeButton.addEventListener("click", function () {
+          popupWindowTask.innerText = "";
+          popupWindowTask.style.display = 'none'
+        });
+        
+      });
+    
+      
+  })
+    
+    
+ 
     
   });
   
@@ -158,6 +229,17 @@ function back () {
   backbutton.style.display = 'none'
   cardContainer.classList.remove('hide')
   hide_container.classList.add('hide')
+  
+ 
+   clonecard = document.getElementsByClassName('childCard')
+  if(clonecard > 0){
+    newcard.appendChild(innerDiv)
+  }
   hide_container.innerText = ''
+  // console.log([newcard])
+  // innerDiv = appendChild(Task)
+  // newcard1.appendChild(Task)
+
   
 };
+
