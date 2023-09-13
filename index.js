@@ -1,245 +1,210 @@
-var popup = document.getElementById("popUp");
-const cardContainer = document.getElementById("cardContainer");
-var main = document.getElementById("main");
-const ClosePopupTask = document.getElementById("closePopup1");
-// var addTaskFormPopupButton = document.getElementById("addPopup1");
-var taskList = document.getElementById("InputTODO");
-var hideMsg = document.getElementById("hide-msgText");
-let backbutton = document.getElementById("back_button");
-const hide_container = document.getElementById("hide_container");
-var appendTasklistdiv = document.getElementById("select-div");
-taskPopupJS =document.querySelector('body')
+const addbtn1 = document.querySelector(".button1");
+const addbtn2 = document.querySelector(".add1");
+const flexcontainer = document.querySelector(".container");
+const mainBody = document.querySelector("body");
 
-// const cardArr = [];
+const displayJustCard = document.querySelector(".displayJustCard");
 
-// var runningCard = 0;
-//----------------
+let newList = document.querySelector(".addlist");
 
-let visible = false;
-function masterButton() {
-  if (!visible) {
-    const popupWindow = document.querySelector(".popupWindow");
-    popupWindow.style.display = "flex";
-    main.classList.add('blur')
+// created an array
+let data = [];
+let cardId;
+
+
+
+// to make 1st popup visible
+function addNewItem() {
+  const newList = document.querySelector(".addlist");
+  newList.style.display = "block";
+}
+
+// to close the first popup
+function closePopUp1() {
+  const newList = document.querySelector(".addlist");
+  newList.style.display = "none";
+}
+
+// to add card(gives functionality to button)
+function addCardToContainer() {
+  newList.style.display = "none";
+  const cardName = document.getElementById("myInput").value;
+
+  const item = {
+    id: new Date().getTime().toString(),
+    title: cardName,
+    content: [],
+  };
+
+  if (!cardName) {
+    alert("Enter the title");
+    newList.style.display = "block";
   } else {
-    const closePopup = document.querySelector(".popupWindow");
-    closePopup.style.display = "none";
-    main.classList.remove('blur')
+    data.push(item);
+    addCard();
+  
+
+  document.getElementById("myInput").value = "";
+
+  const cardHeading = document.querySelector(".cardHeading");
+  cardHeading.innerHTML = "";
+
+  const navBar = document.querySelector(".head1");
+  navBar.style.display = "block";
+
+  const backButton = document.querySelector(".back");
+  backButton.style.display = "none";
+}
+}
+
+// to delete the flex card
+function deleteCard(id) {
+  const cardId = `${id}`;
+  const card = document.getElementById(cardId);
+  card.parentNode.removeChild(card);
+  data = data.filter((item) => item.id !== id);
+
+  if(data.length===0){
+    cardContainer =  document.querySelector(".cardContainer");
+    cardContainer.innerHTML = "No items in the todo list"
+    console.log("dattta",data);
   }
 }
 
-function closePopup() {
-  const closePopup = document.querySelector(".popupWindow");
-  closePopup.style.display = "none";
-  main.classList.remove('blur')
+// made a second popup
+function addListToCard(id) {
+  let newText = document.querySelector(".addlist2");
+  newText.style.display = "block";
+  cardId = id;
 }
 
-function addcard() {
-  const cardName = document.getElementById("inputTask").value; // Card Name variable creaded
-  if (cardName.trim() === "") {
-    return;
+// To close the second popup
+function closeText() {
+  let newList = document.querySelector(".addlist2");
+  newList.style.display = "none";
+}
+
+function renderContents() {
+  for (let i = 0; i < data.length; i++) {
+    let ulelement = document.getElementById(`content_list_${data[i].id}`);
+    let child = "";
+    for (let j = 0; j < data[i].content.length; j++) {
+      let content = data[i].content[j];
+      child += `<li class = "content ${
+        content.done ? "checked" : ""
+      }" id="content_${content.id}" onclick ="doneTask(${content.id}, ${
+        data[i].id
+      })">${content.contentText}</li>`;
+      console.log(data[i]);
+    }
+    ulelement.innerHTML = child;
   }
+}
 
-  // create a temparary Element
-  var newcard = document.createElement("div");
-  var cardTitle = document.createElement("h2");
-  var innerDiv = document.createElement("div");
-  var deletButton = document.createElement("button");
-  var addButton = document.createElement("button");
-
-  // Append a Element as per reured position
-  cardContainer.appendChild(newcard);
-  newcard.appendChild(cardTitle);
-  newcard.appendChild(innerDiv);
-  newcard.appendChild(deletButton);
-  newcard.appendChild(addButton);
-  // innerDiv.document.cardContainer.firstChild
-  // Add a style by using add class method
-  newcard.classList.add("card");
-  deletButton.classList.add("deleteName");
-  addButton.classList.add("addTaskName");
-  innerDiv.classList.add("childCard");
-
-  // visible button in name in card
-  cardTitle.innerText = cardName;
-  deletButton.innerText = "Delete";
-  addButton.innerText = "Add";
-
-  hideMsg.style.display = "none"; // hide msg after clinking Add button
-  closePopup(); // Affer the add card, card will hidden
-
-
-  deletButton.addEventListener('click', function (){
-    cardContainer.removeChild(newcard)
-  })
-
-
-  // Add Task  POPUP visible
-  addButton.addEventListener("click", function () {
-    main.classList.add('blur')
-    let popupWindowTask = document.createElement("div");
-    let HedingTask = document.createElement("h1");
-    let InputTask = document.createElement("input");
-    let AddButton = document.createElement("button");
-    let closeButton = document.createElement("button");
-
-    HedingTask.innerText = "Add Task";
-    AddButton.innerHTML = "Add";
-    closeButton.innerText = "Close";
-
-    popupWindowTask.appendChild(HedingTask);
-    popupWindowTask.appendChild(InputTask);
-    popupWindowTask.appendChild(AddButton);
-    popupWindowTask.appendChild(closeButton);
-
-    popupWindowTask.classList.add('task-popup-parent')
-    AddButton.classList.add('Add-button')
-    closeButton.classList.add('close-button')
-
-
-    taskPopupJS.appendChild(popupWindowTask);
-
-    
-    
-    AddButton.addEventListener("click", function () {
-      console.log('work3')
-      popupWindowTask.classList.add('hide')
-      main.classList.remove('blur')
-      let Task = document.createElement("div");
-      let TaskName = document.createElement("span");
-      let TaskDelete = document.createElement("button");
-
-      Task.appendChild(TaskName);
-      Task.appendChild(TaskDelete);
-
-      TaskName.innerText = InputTask.value;
-      TaskDelete.innerText = "Mark Done";
-
-      innerDiv.appendChild(Task);
-
-
-      popupWindowTask.style.display = 'none'
-      popupWindowTask.innerText = ""; 
-
-
-      TaskDelete.addEventListener('click', function(){
-        TaskName.style.textDecoration = 'line-through'
-        TaskDelete.style.display = 'none'
-        
-    
-      })
+// adding viva list
+function addCard() {
+  const cardcontainer = document.querySelector(".cardContainer");
+  let child = "";
+  for (let i = 0; i < data.length; i++) {
+    //   console.log("data[i]:", data[i]);
+    child += `<div id="${data[i].id}" class="card">
+      <div value="${data[i].title}" onclick ="displayMyCard(${data[i].id}, this.getAttribute('value'))" class="ftext1">${data[i].title}</div>
       
-      
-      
-    });
-    closeButton.addEventListener("click", function () {
-      popupWindowTask.innerText = "";
-      popupWindowTask.style.display = 'none'
-    });
-    
+      <div class="task1">
+          <ul id="content_list_${data[i].id}">
+          </ul>
+      </div>    
+          <div class = "btnspace">
+          <button value = ${data[i].id} onclick ="deleteCard(this.value)" class = "delb"><i class="fa fa-trash" aria-hidden="true"></i>Delete</button>
+          <button value = ${data[i].id} onclick ="addListToCard(this.value)"  class = "plusbutn"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+          </div>
+          </div>`;
+  }
+  cardcontainer.innerHTML = child;
+  renderContents();
+}
+
+// Updating data for the content in list
+function addContenttext() {
+  const contentListId = `content_list_${cardId}`;
+  // console.log(cardId);
+  const Ul = document.getElementById(contentListId);
+  const contentText = document.getElementById("myInput1").value;
+  if (!contentText) {
+    alert("Please add task name");
+  } else {
+    document.getElementById("myInput1").value = "";
+    const liNode = document.createElement("li");
+
+    liNode.innerHTML = contentText;
+    liNode.className = "content";
+
+    Ul.appendChild(liNode);
+    closeText();
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].id == cardId) {
+        let content = {
+          id: new Date().getTime().toString(),
+          contentText: contentText,
+          done: false,
+        };
+        data[i].content.push(content);
+        // console.log(data[i].content);
+      }
+    }
+    renderContents();
+  }
+}
+
+// To change the style of content when we click on task
+function doneTask(taskId, cardId) {
+  const contentId = `content_${taskId}`;
+  const liElement = document.getElementById(contentId);
+  liElement.classList.toggle("checked");
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].id == cardId) {
+      for (let j = 0; j < data[i].content.length; j++) {
+        const content = data[i].content[j];
+        if (content.id == taskId) {
+          data[i].content[j].done = !data[i].content[j].done;
+          // data[i].content[j].done = true;
+        }
+      }
+    }
+  }
+}
+
+function displayMyCard(id, value) {
+  // addbtn1.style.display = "block";
+
+  const cardHeading = document.querySelector(".cardHeading");
+  cardHeading.innerHTML = value;
+
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((allcards) => {
+    allcards.style.display = "none";
   });
+  const cardToShow = document.getElementById(id);
+  cardToShow.style.display = "block";
 
+  const navBar = document.querySelector(".head1");
+  navBar.style.display = "none";
 
-  cardTitle.addEventListener("click", function () {
-    backbutton.style.display = 'flex'
-    cardContainer.classList.add('hide')
-    hide_container.classList.remove('hide')
-
-    let copycard = newcard.cloneNode(true)
-    hide_container.appendChild(copycard); 
-
-    // console.log([hide_container])
-
-    copycard.lastElementChild.addEventListener('click',function(){
-      console.log([copycard]) 
-      // addButton.addEventListener("click", function () {
-        main.classList.add('blur')
-        let popupWindowTask = document.createElement("div");
-        let HedingTask = document.createElement("h1");
-        let InputTask = document.createElement("input");
-        let AddButton = document.createElement("button");
-        let closeButton = document.createElement("button");
-    
-        HedingTask.innerText = "Add Task";
-        AddButton.innerHTML = "Add";
-        closeButton.innerText = "Close";
-    
-        popupWindowTask.appendChild(HedingTask);
-        popupWindowTask.appendChild(InputTask);
-        popupWindowTask.appendChild(AddButton);
-        popupWindowTask.appendChild(closeButton);
-    
-        popupWindowTask.classList.add('task-popup-parent')
-        AddButton.classList.add('Add-button')
-        closeButton.classList.add('close-button')
-    
-    
-        taskPopupJS.appendChild(popupWindowTask); 
-    
-        
-        
-        AddButton.addEventListener("click", function () {
-          console.log('work-2')
-          
-          console.log(AddButton)
-          popupWindowTask.classList.add('hide')
-          main.classList.remove('blur')
-          let Task = document.createElement("div");
-          let TaskName = document.createElement("span");
-          let TaskDelete = document.createElement("button");
-    
-          Task.appendChild(TaskName);
-          Task.appendChild(TaskDelete);
-    
-          TaskName.innerText = InputTask.value;
-          TaskDelete.innerText = "Mark Done";
-          
-          let copycard1 = copycard.children[1]
-          // copycard.nextChildElement.nextChildElement.appendChild(Task);
-          copycard1.appendChild(Task)
-    
-    
-          popupWindowTask.style.display = 'none'
-          popupWindowTask.innerText = ""; 
-    
-          TaskDelete.addEventListener('click', function(){
-            TaskName.style.textDecoration = 'line-through'
-            TaskDelete.style.display = 'none'
-        
-        });
-        closeButton.addEventListener("click", function () {
-          popupWindowTask.innerText = "";
-          popupWindowTask.style.display = 'none'
-        });
-        
-      });
-    
-      
-  })
-    
-    
- 
-    
-  });
-  
+  const backButton = document.querySelector(".back");
+  backButton.style.display = "block";
 }
 
+function openFirstPage() {
+  const cards = document.querySelectorAll(".card");
+  const cardHeading = document.querySelector(".cardHeading");
+  cardHeading.innerHTML = "";
+  cards.forEach((allcards) => {
+    allcards.style.display = "block";
+  });
+  const navBar = document.querySelector(".head1");
+  navBar.style.display = "block";
 
-function back () {
-  backbutton.style.display = 'none'
-  cardContainer.classList.remove('hide')
-  hide_container.classList.add('hide')
-  
- 
-   clonecard = document.getElementsByClassName('childCard')
-  if(clonecard > 0){
-    newcard.appendChild(innerDiv)
-  }
-  hide_container.innerText = ''
-  // console.log([newcard])
-  // innerDiv = appendChild(Task)
-  // newcard1.appendChild(Task)
-
-  
-};
-
+  const backButton = document.querySelector(".back");
+  backButton.style.display = "none";
+}

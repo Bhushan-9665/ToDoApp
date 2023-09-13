@@ -8,43 +8,50 @@
 </head>
 <body>
 
-    <div class="main" id="main">
-        <button  id="back_button" class="backbutton" onclick="back()" > < Back</button>
-
-            <div class="Tasks">Tasks</div> 
-            <div class="List">List</div> 
-            <div class="masterButton" onclick="masterButton()">+</div> 
-            <div class="addItem "onclick="masterButton()">Add Item</div>
-
-
-
-            <div class="msg" id="hide-msgText">
-                <h1> No Item In The Toda List</h1>
-            </div>
-
-            
-
-    </div>
-
-    
-        <div class="popupWindow" id="popUp"> 
-            <h1>Add New List</h1>
-            <input type="text" placeholder="Add New List" id="inputTask" value="" name="">
-            <button id="addPopup" onclick="addcard()">Add</button> 
-            <button id="closePopup" onclick="closePopup()">Close</button>
+    <nav class="flex1">
+        <div class="head1">
+          <span class="Task1 tasks">Tasks</span><span class="List1">&nbsp; List</span>
         </div>
-        
-          
 
-        <div id="cardContainer" class="cardContainer "></div>
-
-    <!-- <p id="demo"></p> -->
-
-
-
-    <div id="hide_container"  class="hide_container hide"></div>
-
-    
+        <div onclick="openFirstPage()" class="back">
+          <button class="arr">&lt;</button><span class="white1"> Back</span>
+        </div>
+        <div class="right">
+          <button onclick="addNewItem()" class="button1 buttonPosition">+</button><span class="white1 add1 special">&nbsp; Add Item</span>
+        </div>
+      </nav>
+  
+      <div class="cardHeading"></div>
+      <div class="cardContainer name-1">No items in the todo list</div>
+      
+      <!-- <div class="justPop"> -->
+        <div class="addlist">
+          <div class="popup1">
+            <div class="text1">Add New List</div>
+            <input id="myInput" type="text" class="input1" placeholder="Add New List"/>
+            <div class="bflex">
+              <button onclick="addCardToContainer()" class="add-btn1 ppt">Add</button>
+              <button onclick="closePopUp1()" class="close1 ppt">Close</button>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+  
+      <div class="addlist2">
+        <div class="popup1">
+          <div class="text1">Add New Item</div>
+          <input
+            id="myInput1"
+            type="text"
+            class="input1 popup1Input"
+            placeholder="Add New List"
+          />
+          <div class="bflex">
+            <button onclick="addContenttext()" class="add-btn1 ppt">Add</button>
+            <button onclick="closeText()" class="close1 ppt">Close</button>
+          </div>
+        </div>
+      </div>
 
 
 

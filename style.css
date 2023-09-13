@@ -1,59 +1,44 @@
-* {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-
+body{
+    background-color: rgb(56, 55, 55);
+    overflow-x: hidden;
 }
 
-body {
-    background-color: aliceblue;
-    width: 100%;
-
-
-}
-
-/* -----------------------------------------title Bar-------------------------------------------------- */
-.main {
+.flex1{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    margin-top: 0%;
-    position: relative;
-    left: 0%;
-
+    justify-content: space-between;
 }
 
-
-
-.Tasks {
+.Task1{
     position: absolute;
     font-size: 70px;
-    left: 7%;
-    top: 3rem;
+    left: 11%;
+    top: 4rem;
     color: aliceblue;
 }
 
-.List {
-    position: absolute;
-    font-size: 70px;
-    top: 3rem;
-    left: 17%;
-    color: aliceblue;
+.head1{ 
+    padding-left: 110px ;
+    padding-top: 60px;
+    display: block;
+    font-size: 2em;
 }
 
-.addItem {
+
+.List1{
     position: absolute;
-    font-size: 70px;
-    right: 22%;
-    top: 3rem;
+    font-size: 50px;
+    top: 5rem;
+    left: 19%;
     color: aliceblue;
-    cursor: pointer;
+    
 }
 
-.masterButton {
+.right{
+    padding-right: 160px;
+    padding-top: 60px;
+}
+
+.button1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,107 +52,38 @@ body {
     font-size: 5rem;
     color: aliceblue;
     cursor: pointer;
-
 }
 
-
-.msg h1 {
+.add1{
     position: absolute;
-    top: 10rem;
-    left: 9rem;
-    font-size: 2rem;
+    font-size: 70px;
+    left: 70%;
+    top: 4rem;
     color: aliceblue;
+    cursor: pointer;
 }
 
-/* -----------------------------------------title Bar-------------------------------------------------- */
-
-
-
-
-/* -----------------------------------------Popup Window-------------------------------------------------- */
-
-.popupWindow {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 35rem;
-    height: 20rem;
-    background-color: aliceblue;
-    border-radius: 10px;
-    border: 3px solid black;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    display: none;
-    transform: translate(-50%, 50%);
-    z-index: 5;
-
-}
-
-
-
-.popupWindow h1 {
-    position: absolute;
+.container{
+    position: relative;
     top: 50px;
-    font-size: 38px;
-    color: tomato;
+    left: 110px;
+    font-size: 1.5em;
 }
 
-.popupWindow input {
-    position: absolute;
-    top: 40%;
-    bottom: 0%;
-    width: 70%;
-    height: 50px;
-    border-radius: 5px;
-    border: 2px solid tomato;
-    text-align: center;
-    font-size: 24px;
-}
-
-.popupWindow #addPopup {
-    position: relative;
-    top: 80px;
-    right: 100px;
-    width: 100px;
-    height: 50px;
-    background-color: lightgreen;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-
-
-.popupWindow #closePopup {
-    position: relative;
-    top: 30px;
-    left: 100px;
-    width: 100px;
-    height: 50px;
-    background-color: tomato;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-
-/* card container */
-
-.cardContainer {
+.cardContainer{
     display: flex;
-    width: 85%;
-    justify-content: space-between;
+    position: relative;
+    top: 12rem;
+    left: 6rem;
+    right: 3rem;
+    justify-content: space-around;
     flex-wrap: wrap;
-    border: 3px solid black;
-    background-color: black;
-    gap: 2rem;
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    right: 10%;
+    gap: 4rem;
+    width: 90%;
 }
 
-.card {
+
+.card{
     display: flex;
     flex-direction: column;
     width: 242px;
@@ -182,15 +98,76 @@ body {
     top: 0%;
 }
 
-.card h2 {
+
+.ftext1{
     padding: 20px;
     border-bottom: 2px solid black;
-    /* background-color: rgb(90, 90, 199); */
     color: #feffff;
     cursor: pointer;
 }
 
-.card .deleteName {
+
+.addlist{
+   position: fixed;
+   top:45%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   z-index: 999;
+   display: none ;
+}
+.popup1{
+    background-color: white;
+    font-size: 1.2rem;
+    height: 180px;
+    width: 350px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Roboto';
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1000px #212121db;
+   
+}
+
+.text1{
+    color : red;
+    text-align: center;
+    padding-top: 0.8rem;
+}
+
+.ppt{
+    background-color: orangered;
+    color: wheat;
+    border-radius: 10px;
+    height: 2rem;
+   width: 3.5rem;
+   border: none;
+}
+
+.ppt:hover{
+    background-color: #688844;
+    box-shadow: 6px 4px 4px 0px;
+}
+
+
+.input1{
+    text-align: center;
+    width: 250px;
+    height: 1.5rem;
+    border: 1px solid black;
+}
+
+.bflex{
+    display: flex;
+    justify-content: space-around;
+    width: 180px;
+}
+
+
+
+.delb{
     position: absolute;
     width: 97%;
     margin-left: 4px;
@@ -201,7 +178,9 @@ body {
     cursor: pointer;
 }
 
-.card .addTaskName {
+
+
+.plusbutn{
     position: absolute;
     width: 97%;
     margin-left: 4px;
@@ -212,832 +191,250 @@ body {
     cursor: pointer;
 }
 
-/* Inner div On popup button */
-
-.childCard {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffff;
-    color: #111111;
-    border-radius: 5px;
-    width: 97%;
-    height: 60%;
-    margin-left: 3px;
-    overflow: auto;
-}
 
 
-
-.hide_container {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    position: absolute;
-    top: 25%;
-    left: 10%;
-
-}
-
-
-
-/* Creating a popup for add task Event */
-.hide {
-    display: none;
-}
-
-.task-popup-parent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 390px;
-    height: 270px;
-    background-color: wheat;
-    position: absolute;
-    top: 30%;
-    left: 25%;
-    border-radius: 15px;
-    border: black 2px solid;
-}
-
-.task-popup-parent h1 {
-    position: absolute;
-    top: 20px;
-}
-
-.task-popup-parent input {
-    width: 80%;
-    height: 35px;
-}
-
-.Add-button {
-    width: 80px;
-    height: 40px;
-    position: absolute;
-    left: 10%;
-    top: 70%;
-    color: white;
-    background: green;
-}
-
-.close-button {
-    width: 80px;
-    height: 40px;
-    position: absolute;
-    right: 10%;
-    top: 70%;
-    color: white;
-    background: tomato;
-}
-
-
-/* .popupWindow-task {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 35rem;
-    height: 20rem;
-    background-color: aliceblue;
-    border-radius: 10px;
-    border: 3px solid black;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    display: none;
-    transform: translate(-50%, 50%);
-    z-index: 4;
-} */
-
-
-
-/* .popupWindow-task h1 {
-    position: absolute;
-    top: 50px;
-    font-size: 38px;
-    color: tomato;
-} */
-
-/* .popupWindow-task input {
-    position: absolute;
-    top: 40%;
-    bottom: 0%;
-    width: 70%;
-    height: 50px;
-    border-radius: 5px;
-    border: 2px solid tomato;
-    text-align: center;
-    font-size: 24px;
-} */
-
-/* .popupWindow-task .addPopup1 {
-    position: relative;
-    top: 80px;
-    right: 100px;
-    width: 100px;
-    height: 50px;
-    background-color: lightgreen;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-} */
-
-
-
-/* .popupWindow-task .closePopup1 {
-    position: relative;
-    top: 30px;
-    left: 100px;
-    width: 100px;
-    height: 50px;
-    background-color: tomato;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-} */
-
-
-/* -----------------------------------------Back button css */
-
-
-.backbutton {
+.addlist2{
     position: fixed;
-    left: 9%;
-    top: 14%;
-    width: 100px;
-    height: 50px;
-    border: #000105;
-    border-radius: 10px;
-    background-color: transparent;
-    color: white;
-    font-weight: bolder;
-    font-size: 28px;
+    top:45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none ;
+ }
+
+
+ .spaceItem{
+    color: black;
+    padding: 5px;
+ }
+
+ .task1{
+    position: relative;
+    justify-content: center;
+    height: 250px;
+    display: flex;
+    overflow: auto;
+    width: 15rem;
+}
+
+
+
+ul{
+    color: black;
+    list-style-type: none;
+    text-align: start;
+}
+
+
+.checked{
+    text-decoration: line-through;
+    color: red;
+}
+
+
+
+.vanish2{
     display: none;
-    cursor: pointer;
-    z-index: 8;
 }
 
-.blur{
-    filter: blur(4px);
+.arr{
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+
+.cardHeading{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    top: 3rem;
+}
+
+.buttonPosition{
+    position: absolute;
+    right: 35rem;
+    top: 4rem;
+}
+
+.displayJustCard{
+    margin: auto;
+    position: relative;
+}
+
+.back{
+    display: none;
+    position: absolute;
+    top: 5rem;
+    left: 8rem;
+    font-size: 1.5rem;
 }
 
 
 
-@media screen and (max-width: 480px) and (min-width: 280px) {
+.addlist3{
+    position: fixed;
+    top:45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none ;
+    z-index: 999;
+ }
 
-    /* meadia screen for mobile view */
-    .main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 150vh;
-        background-color: black;
-        margin-top: 0%;
-        position: relative;
-        left: 0%;
+ li{
+    padding-bottom: 5px;
+    font-size: 1.3rem;
+ }
 
-    }
+ .name-1{
+    font-size: 1.5rem;
+    color: white;
+ }
 
 
+ @media screen and (min-width:280px) and (max-width:500px) {
 
-    .Tasks {
+    .Task1 {
         position: absolute;
-        font-size: 70px;
-        left: 10%;
+        font-size: 34px;
+        left: 6%;
         top: 3rem;
         color: aliceblue;
     }
 
-    .List {
+    .List1 {
         position: absolute;
-        font-size: 70px;
+        font-size: 24px;
+        top: 57px;
+        left: 24%;
+        color: aliceblue;
+    }
+
+    .add1 {
+        position: absolute;
+        font-size: 24px;
+        left: 71%;
+        top: 60px;
+        color: aliceblue;
+        cursor: pointer;
+    }
+
+    .buttonPosition {
+        position: absolute;
+        right: 7rem;
+        width: 50px;
         top: 3rem;
-        left: 60%;
-        color: aliceblue;
+        left: 14rem;
+        height: 50px;
     }
-
-    .addItem {
-        position: absolute;
-        font-size: 70px;
-        right: 5%;
-        top: 9rem;
-        color: aliceblue;
-        cursor: pointer;
-    }
-
-
-    .masterButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #00A5EC;
-        border-radius: 50%;
-        position: absolute;
-        left: 7%;
-        top: 154px;
-        width: 4rem;
-        height: 4rem;
-        font-size: 4rem;
-        color: aliceblue;
-        cursor: pointer;
-
-    }
-
-
-    .msg h1 {
-        position: absolute;
-        top: 17rem;
-        left: 4rem;
-        font-size: 2rem;
-        color: aliceblue;
-    }
-
-    /* -----------------------------------------title Bar-------------------------------------------------- */
-
-
-
-
-    /* -----------------------------------------Popup Window-------------------------------------------------- */
-
-    .popupWindow {
-        /* display: flex; */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 97%;
-        height: 15rem;
-        background-color: aliceblue;
-        border-radius: 10px;
-        border: 3px solid black;
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        display: none;
-        transform: translate(-50%, 50%);
-        z-index: 5;
-
-    }
-
-
-
-    .popupWindow h1 {
-        position: absolute;
-        top: 25px;
-        font-size: 34px;
-        color: tomato;
-    }
-
-    .popupWindow input {
-        position: absolute;
-        top: 39%;
-        bottom: 0%;
-        width: 70%;
-        height: 37px;
-        border-radius: 5px;
-        border: 2px solid tomato;
-        text-align: center;
-        font-size: 18px;
-    }
-
-    .popupWindow #addPopup {
-        position: relative;
-        top: 64px;
-        right: 72px;
-        width: 70px;
-        height: 36px;
-        background-color: lightgreen;
-        border-radius: 5px;
-        font-size: 15px;
-    }
-
-
-
-    .popupWindow #closePopup {
-        position: absolute;
-        top: 162px;
-        left: 190px;
-        width: 70px;
-        height: 36px;
-        background-color: tomato;
-        border-radius: 5px;
-        font-size: 15px;
-    }
-
-
 
     .cardContainer {
         display: flex;
-        width: min-content;
-        height: 100vh;
-        justify-content: center;
-        flex-wrap: wrap;
-        border: 3px solid black;
-        background-color: black;
-        position: absolute;
-        gap: 2rem;
-        top: 34%;
-        left: 21%;
-        /* right: 10%; */
-        overflow: scroll;
-    }
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        width: 242px;
-        gap: 5px;
-        height: 380px;
-        border-radius: 10px;
-        border: 3px solid black;
-        background-color: aliceblue;
-        text-align: center;
-        background-color: #5d70bd;
         position: relative;
-        top: 0%;
-    }
-
-    .card h2 {
-        padding: 20px;
-        border-bottom: 2px solid black;
-        /* background-color: rgb(90, 90, 199); */
-        color: #feffff;
-    }
-
-    .card .deleteName {
-        position: absolute;
-        width: 97%;
-        margin-left: 4px;
-        background-color: #800020;
-        height: 30px;
-        top: 21rem;
-        left: 0rem;
-    }
-
-    .card .addTaskName {
-        position: absolute;
-        width: 97%;
-        margin-left: 4px;
-        background-color: #0D362B;
-        height: 30px;
-        top: 19rem;
-        left: 0rem;
-    }
-
-    /* Inner div On popup button */
-
-    .childCard {
-        display: inline-flex;
+        top: 4rem;
+        left: 1rem;
+        /* right: 3rem; */
         justify-content: space-around;
-        align-items: center;
-        background-color: #ffffff;
-        color: #111111;
-        border-radius: 5px;
-        width: 97%;
-        /* height: 35px; */
-        margin-left: 3px;
-
-        overflow: auto;
-    }
-
-    .childCard h3 {
-        overflow: auto;
-
+        flex-wrap: wrap;
+        gap: 4rem;
+        width: 90%;
     }
 
 
 
+ }
+
+@media screen and (min-width:1024px) and (max-width:1440px) {
 
 
-
-    /* Creating a popup for add task Event */
-
-    .popupWindow-task {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 35rem;
-        height: 20rem;
-        background-color: aliceblue;
-        border-radius: 10px;
-        border: 3px solid black;
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        display: none;
-        transform: translate(-50%, 50%);
-        z-index: 4;
-    }
-
-    /* 
-    div
-    h1
-    input
-    id addpopup 
-    id clockpopup
-    */
-
-    .popupWindow-task h1 {
-        position: absolute;
-        top: 50px;
-        font-size: 38px;
-        color: tomato;
-    }
-
-    .popupWindow-task input {
-        position: absolute;
-        top: 40%;
-        bottom: 0%;
-        width: 70%;
-        height: 50px;
-        border-radius: 5px;
-        border: 2px solid tomato;
-        text-align: center;
-        font-size: 24px;
-    }
-
-    .popupWindow-task .addPopup1 {
-        position: relative;
-        top: 80px;
-        right: 100px;
-        width: 100px;
-        height: 50px;
-        background-color: lightgreen;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-
-
-
-    .popupWindow-task .closePopup1 {
-        position: relative;
-        top: 30px;
-        left: 100px;
-        width: 100px;
-        height: 50px;
-        background-color: tomato;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-
-
-
-    /* --------------------task popup----------- */
-    
-    
-    .task-popup-parent {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 365px;
-        height: 243px;
-        background-color: wheat;
-        position: absolute;
-        top: 30%;
-        left: 1%;
-        border-radius: 15px;
-        border: black 2px solid;
-    }
-
-    /* -----------------------------------------Back button css */
-
-
-    .backbutton {
-        position: absolute;
-        left: 6%;
-        top: 26%;
-        width: 100px;
-        height: 50px;
-        border: #000105;
-        border-radius: 10px;
-        background-color: rgb(117, 1, 1);
-        color: #dc6482;
-        /* font-weight: bolder; */
-        font-size: 18px;
-    }
-}
-
-
-
-/*============================================================================ Tab View ======================================== */
-
-
-@media screen and (max-width: 920px) and (min-width: 500px) {
-
-    /* meadia screen for mobile view */
-    .main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 150vh;
-        background-color: black;
-        margin-top: 0%;
-        position: relative;
-        left: 0%;
-
-    }
-
-
-
-    .Tasks {
+    .Task1 {
         position: absolute;
         font-size: 70px;
-        left: 10%;
-        top: 6rem;
+        left: 5%;
+        top: 3rem;
         color: aliceblue;
     }
 
-    .List {
+    .List1 {
         position: absolute;
-        font-size: 70px;
-        top: 6rem;
-        left: 30%;
+        font-size: 50px;
+        top: 4rem;
+        left: 19%;
         color: aliceblue;
     }
 
-    .addItem {
+    .add1 {
         position: absolute;
-        font-size: 70px;
-        right: 8%;
-        top: 6rem;
+        font-size: 59px;
+        right: 3%;
+        top: 62px;
         color: aliceblue;
         cursor: pointer;
     }
 
-
-    .masterButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #00A5EC;
-        border-radius: 50%;
+    .buttonPosition {
         position: absolute;
-        left: 48%;
-        top: 109px;
-        width: 4rem;
-        height: 4rem;
-        font-size: 4rem;
-        color: aliceblue;
-        cursor: pointer;
+        right: 19rem;
+        top: 74px;
+        width: 60px;
+        height: 55px;
     }
-
-
-    .msg h1 {
-        position: absolute;
-        top: 17rem;
-        left: 4rem;
-        font-size: 2rem;
-        color: aliceblue;
-    }
-
-    /* -----------------------------------------title Bar-------------------------------------------------- */
-
-
-
-
-    /* -----------------------------------------Popup Window-------------------------------------------------- */
-
-    .popupWindow {
-        /* display: flex; */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 35rem;
-        height: 20rem;
-        background-color: aliceblue;
-        border-radius: 10px;
-        border: 3px solid black;
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        display: none;
-        transform: translate(-50%, 50%);
-        z-index: 5;
-
-    }
-
-
-
-    .popupWindow h1 {
-        position: absolute;
-        top: 25px;
-        font-size: 34px;
-        color: tomato;
-    }
-
-    .popupWindow input {
-        position: absolute;
-        top: 39%;
-        bottom: 0%;
-        width: 70%;
-        height: 37px;
-        border-radius: 5px;
-        border: 2px solid tomato;
-        text-align: center;
-        font-size: 18px;
-    }
-
-    .popupWindow #addPopup {
-        position: relative;
-        top: 80px;
-        right: 100px;
-        width: 100px;
-        height: 50px;
-        background-color: lightgreen;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-    
-    
-    
-    .popupWindow #closePopup {
-        position: relative;
-        top: 30px;
-        left: 100px;
-        width: 100px;
-        height: 50px;
-        background-color: tomato;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-
-
 
     .cardContainer {
         display: flex;
-        width: fit-content;
-        height: 100vh;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        border: 3px solid black;
-        background-color: black;
-        position: absolute;
-        gap: 2rem;
-        top: 25%;
-        /* left: 10%; */
-        /* right: 10%; */
-        overflow: scroll;
-    }
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        width: 242px;
-        gap: 5px;
-        height: 380px;
-        border-radius: 10px;
-        border: 3px solid black;
-        background-color: aliceblue;
-        text-align: center;
-        background-color: #5d70bd;
         position: relative;
-        top: 0%;
-    }
-
-    .card h2 {
-        padding: 20px;
-        border-bottom: 2px solid black;
-        /* background-color: rgb(90, 90, 199); */
-        color: #feffff;
-    }
-
-    .card .deleteName {
-        position: absolute;
-        width: 97%;
-        margin-left: 4px;
-        background-color: #800020;
-        height: 30px;
-        top: 21rem;
-        left: 0rem;
-    }
-
-    .card .addTaskName {
-        position: absolute;
-        width: 97%;
-        margin-left: 4px;
-        background-color: #0D362B;
-        height: 30px;
-        top: 19rem;
-        left: 0rem;
-    }
-
-    /* Inner div On popup button */
-
-    .childCard {
-        display: inline-flex;
+        top: 7rem;
+        left: 4rem;
         justify-content: space-around;
-        align-items: center;
-        background-color: #ffffff;
-        color: #111111;
-        border-radius: 5px;
-        width: 97%;
-        /* height: 35px; */
-        margin-left: 3px;
-
-        overflow: auto;
+        flex-wrap: wrap;
+        gap: 4rem;
+        width: 90%;
     }
 
-    .childCard h3 {
-        overflow: auto;
+ }
 
+
+ @media screen and (min-width:700px) and (max-width:980px) {
+    .add1 {
+        position: absolute;
+        font-size: 60px;
+        left: 65%;
+        top: 5rem;
+        color: aliceblue;
+        cursor: pointer;
     }
 
+    .buttonPosition {
+        position: absolute;
+        right: 20rem;
+        top: 4rem;
+    }
 
+    .List1 {
+        position: absolute;
+        font-size: 50px;
+        top: 5rem;
+        left: 27%;
+        color: aliceblue;
+    }
+    .Task1 {
+        position: absolute;
+        font-size: 70px;
+        left: 8%;
+        top: 4rem;
+        color: aliceblue;
+    }
 
-
-
-
-    /* Creating a popup for add task Event */
-
-    .popupWindow-task {
+    .cardContainer {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 35rem;
-        height: 20rem;
-        background-color: aliceblue;
-        border-radius: 10px;
-        border: 3px solid black;
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        display: none;
-        transform: translate(-50%, 50%);
-        z-index: 4;
-    }
-
-    /* 
-    div
-    h1
-    input
-    id addpopup 
-    id clockpopup
-    */
-
-    .popupWindow-task h1 {
-        position: absolute;
-        top: 50px;
-        font-size: 38px;
-        color: tomato;
-    }
-
-    .popupWindow-task input {
-        position: absolute;
-        top: 40%;
-        bottom: 0%;
-        width: 70%;
-        height: 50px;
-        border-radius: 5px;
-        border: 2px solid tomato;
-        text-align: center;
-        font-size: 24px;
-    }
-
-    .popupWindow-task .addPopup1 {
         position: relative;
-        top: 80px;
-        right: 100px;
-        width: 100px;
-        height: 50px;
-        background-color: lightgreen;
-        border-radius: 5px;
-        font-size: 18px;
+        top: 12rem;
+        left: 4rem;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 4rem;
+        width: 90%;
     }
+ }
 
-
-
-    .popupWindow-task .closePopup1 {
-        position: relative;
-        top: 30px;
-        left: 100px;
-        width: 100px;
-        height: 50px;
-        background-color: tomato;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-
-
-    /* -----------------------------------------Back button css */
-
-
-    .backbutton {
-        position: absolute;
-        left: 6%;
-        top: 26%;
-        width: 100px;
-        height: 50px;
-        border: #000105;
-        border-radius: 10px;
-        background-color: rgb(117, 1, 1);
-        color: #dc6482;
-        /* font-weight: bolder; */
-        font-size: 18px;
-    }
-}
